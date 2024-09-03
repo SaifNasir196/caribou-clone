@@ -22,7 +22,7 @@ const FAQ = () => {
             <div className="px-[13rem] text-lg">
                 <Accordion type='single' collapsible className=''>
                     {FAQData.map((faq, index) => (
-                        <AccordionItem value={`${index}`}>
+                        <AccordionItem value={`${index}`} key={index}>
                             <AccordionTrigger>
                                 <h3 className="font-sans text-lg font-light my-2">{faq.question}</h3>
                             </AccordionTrigger>

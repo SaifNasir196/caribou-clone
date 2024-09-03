@@ -162,3 +162,19 @@ export const FAQData = [
         answer: "We will assist you in any way we can.  We have extensive experience in dealing with tax authorities in various jurisdictions. We can assist in addressing audit questions, drafting responses to tax authorities, and correlating the requested information."
     },
 ] as const
+
+
+export const employees = [
+  { name: "Brooklyn Simmons", title: "CEO", country: "United States", flag: "🇺🇸" },
+  { name: "Kathryn Murphy", title: "CTO", country: "United States", flag: "🇺🇸" },
+  { name: "Marvin McKinney", title: "Head of Product", country: "United Kingdom", flag: "🇬🇧", verified: true },
+  { name: "Albert Flores", title: "Engineer", country: "United Kingdom", flag: "🇬🇧", verified: true },
+  { name: "Floyd Miles", title: "Engineer", country: "United Kingdom", flag: "🇬🇧", verified: true },
+  { name: "Jacob Jones", title: "Engineer", country: "United Kingdom", flag: "🇬🇧", verified: true },
+] ;
+
+export const arrowPaths = [
+  { start: { x: 370, y: 180 }, end: { x: 450, y: 70 }, controlPoint: { x: 410, y: 180 } },
+  { start: { x: 370, y: 180 }, end: { x: 450, y: 180 }, controlPoint: { x: 410, y: 180 } },
+  { start: { x: 370, y: 180 }, end: { x: 450, y: 290 }, controlPoint: { x: 410, y: 180 } },
+];

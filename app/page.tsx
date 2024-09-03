@@ -5,6 +5,7 @@ import Features from "@/components/Features";
 import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
+import Diagram from "@/components/Diagram";
 import Footer from "@/components/Footer";
 
 export default function Home() {
