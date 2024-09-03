@@ -7,6 +7,9 @@ import CompanyStructureDiagram from "./Diagram"
 import OrganizationChart from "./OrganizationChart"
 import { employees, arrowPaths } from "@/lib/data"
 import ChatMessage from "./ChatMessage"
+import { Switch } from "@/components/ui/switch"
+import { Checkbox } from "./ui/checkbox"
+
 
 
 export default function Component() {
@@ -23,10 +26,10 @@ export default function Component() {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-12 font-sans font-light tracking-wide">
-                    <div className="flex flex-col">
-                        <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem]">
-                            <CardContent className="py-20 px-[3.5rem] space-y-10 h-full">
+                <div className="grid grid-cols-1 md:grid-cols-2 md:grid-rows-3 gap-x-12 gap-y-6 font-sans font-light tracking-wide">
+                    <div className="flex flex-col items-end justify-end">
+                        <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem] mb-10">
+                            <CardContent className="py-20 px-[3.5rem] space-y-10 h-full ">
 
                                 <ChatMessage
                                     sender={{
@@ -49,40 +52,12 @@ export default function Component() {
                                     message="Sure thing. I can see you’ve already uploaded files for me - thanks!"
                                     isReply
                                 />
-                                {/* <div className="flex items-start mb-4 bg-white rounded-2xl border shadow-md relative">
-                                    <Badge className="text-base font-normal bg-white rounded-full p-1 h-8 absolute -top-4 left-4">
-                                        <Avatar className="h-6 w-6">
-                                            <AvatarImage src="https://avatars.githubusercontent.com/u/1403241?v=4" />
-                                        </Avatar>
-                                        <span className="text-indigo-600 px-3">Andi</span>
-                                    </Badge>
-                                    <div className="p-4 pt-6">
-                                        <span className="text-lg text-gray-800 ">Hey </span>
-                                        <Badge className="text-base font-light py-0 px-2 bg-indigo-50 text-blue-500 rounded-full">@James</Badge>
-                                        <span className="text-lg text-gray-800 "> Can you please review this change to our parent and subsidiary structure in the US?</span>
-                                    </div>
-                                </div> */}
-
-                                {/* <div className="flex items-start mb-4 ml-16 bg-white rounded-2xl border shadow-md relative">
-                                    <Badge className="text-base font-normal bg-white rounded-full p-1 h-8 absolute -top-4 right-4">
-                                        <Avatar className="h-6 w-6">
-                                            <AvatarImage src="https://avatars.githubusercontent.com/u/1403241?v=4" />
-                                        </Avatar>
-                                        <span className="text-indigo-600 px-3">James</span>
-                                    </Badge>
-                                    <div className="p-4 pt-6">
-                                        <span className="text-lg text-gray-800">Hi </span>
-                                        <Badge className="text-base font-light py-0 px-2 bg-indigo-50 text-blue-500 rounded-full">@Andi</Badge>
-                                        <span className="text-lg text-gray-800"> Sure thing. I can see you’ve already uploaded files for me - thanks!</span>
-                                    </div>
-                                </div> */}
                             </CardContent>
                         </Card>
                     </div>
 
-
-                    <div className="flex flex-col">
-                        <Card className="bg-[#F9F7F4] border-none shadow-none h-[25rem] p-0">
+                    <div className="flex flex-col justify-end">
+                        <Card className="bg-[#F9F7F4] border-none shadow-none h-[25rem] p-0 mb-10">
                             <CardContent className="flex flex-col justify-end gap-4 h-full p-1 pb-2 ">
                                 <div className="flex space-x-4">
                                     <img src="/placeholder.svg?height=24&width=24" alt="Slack" className="w-6 h-6" />
@@ -97,7 +72,7 @@ export default function Component() {
                     </div>
 
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2">
                         <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem] ">
                             <CardContent className="p-6 space-y-4 h-full">
                                 <div className="relative flex flex-col items-end justify-start h-full m-7">
@@ -137,24 +112,24 @@ export default function Component() {
                                 </div>
                             </CardContent>
                         </Card>
-                        <h3 className="text-2xl font-medium">Activity feed</h3>
-                        <p className="text-gray-500">A simple timeline to give you clear instructions on what matters, like who signs, what, and when, minus the chaos.</p>
+                        <h3 className="text-2xl font-medium mt-5">Activity feed</h3>
+                        <p className="text-gray-600">A simple timeline to give you clear instructions on what matters, like who signs, what, and when, minus the chaos.</p>
                     </div>
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2">
                         <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem]">
                             <CardContent className="p-6 space-y-4 h-full">
                                 <CompanyStructureDiagram />
 
                             </CardContent>
                         </Card>
-                        <h3 className="text-2xl font-medium">Entity Monitoring</h3>
-                        <p className="text-gray-500">Go from firefighting to real-time international tax monitoring as your entities grow. We ensure your solution is implemented the right way.</p>
+                        <h3 className="text-2xl font-medium mt-5">Entity Monitoring</h3>
+                        <p className="text-gray-600">Go from firefighting to real-time international tax monitoring as your entities grow. We ensure your solution is implemented the right way.</p>
 
                     </div>
 
 
-                    <div className="flex flex-col gap-3">
+                    <div className="flex flex-col gap-2">
                         <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem]">
                             <CardContent className="p-6 space-y-4 overflow-hidden">
                                 <OrganizationChart
@@ -163,41 +138,59 @@ export default function Component() {
                                 />
                             </CardContent>
                         </Card>
-                        <h3 className="text-2xl font-medium">Automatic document parsing</h3>
-                        <p className="text-gray-500">We work fast by having you upload a document instead of answering a ton of questions, and we let our system do the work of extracting the correct information.</p>
+                        <h3 className="text-2xl font-medium mt-5">Automatic document parsing</h3>
+                        <p className="text-gray-600">We work fast by having you upload a document instead of answering a ton of questions, and we let our system do the work of extracting the correct information.</p>
 
                     </div>
 
-                    <div className="flex flex-col gap-3">
-                        <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem]">
-                            <CardContent className="p-6 space-y-4">
-                                <div className="bg-white p-4 rounded-lg space-y-4">
-                                    <div className="flex items-center space-x-2">
-                                        <Users className="text-blue-500" />
-                                        <span className="font-semibold">Select any entities owned by Acme Inc</span>
+                    <div className="flex flex-col gap-2">
+                        <Card className="bg-[#e8e5e2] border-none shadow-none h-[25rem] ">
+                            <CardContent className="p-11 relative flex h-full overflow-hidden ">
+                                {/* cursor*/}
+                                <div className="h-full pl-3 pr-8">
+                                    {/* straight vertical dashed line */}
+                                    <div className="absolute h-full w-[0.15rem] bg-gray-300 top-0"></div>
+                                </div>
+
+                                {/* card */}
+                                <div className="bg-white p-6 rounded-lg space-y-9 h-96">
+                                    <div className="flex flex-col items-start gap-1">
+                                        <span className="font-normal">Select any entities owned by Acme Inc</span>
+                                        <p className="text-sm text-gray-500">Select the entities Acme Inc owns, and then input the percentage ownership.</p>
                                     </div>
-                                    <p className="text-sm text-gray-500">Select the entities Acme Inc owns, and then input the percentage ownership.</p>
-                                    <div className="space-y-2">
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center space-x-2">
-                                                <input type="checkbox" className="rounded text-blue-500" />
-                                                <span>Acme Pty Ltd</span>
-                                            </div>
-                                            <input type="text" className="w-16 p-1 border rounded" placeholder="50" />
+
+                                    {/* switch */}
+                                    <div className="space-y-4">
+                                        <div className="flex gap-2 ">
+                                            <Switch /> <span className="text-sm text-slate-700 font-medium">Acme Inc does not own any entities</span>
                                         </div>
-                                        <div className="flex items-center justify-between">
-                                            <div className="flex items-center space-x-2">
-                                                <input type="checkbox" className="rounded text-blue-500" checked />
-                                                <span>Acme Corp</span>
+                                        <div className="flex items-center justify-between border-[2.5px] border-indigo-500 my-3 p-3 rounded-xl">
+                                            <div className="flex items-center space-x-4">
+                                                <Checkbox checked className="w-5 h-5 rounded-md" />
+                                                <Badge variant="outline" className="px-3 mx-4 text-sm text-slate-800 font-normal">Acme Pty Ltd</Badge>
                                             </div>
-                                            <input type="text" className="w-16 p-1 border rounded" value="100" />
+                                            <div className="flex justify-center">
+                                                <span className=" text-gray-600 border border-gray-300 border-r-0 p-2 px-3 mr-0 rounded-md rounded-tr-none rounded-br-none">%</span>
+                                                <span className=" text-gray-800 border border-gray-300 py-2  pl-3 pr-5  ml-0 rounded-md rounded-tl-none rounded-bl-none">50</span>
+                                            </div>
                                         </div>
+                                        <div className="flex items-center justify-between border-[2.5px] border-indigo-500 my-3 p-3 rounded-xl">
+                                            <div className="flex items-center space-x-4">
+                                                <Checkbox checked className="w-5 h-5 rounded-md" />
+                                                <Badge variant="outline" className="px-3 mx-4 text-sm text-slate-800 font-normal">Acme Corp</Badge>
+                                            </div>
+                                            <div className="flex justify-center">
+                                                <span className=" text-gray-600 border border-gray-300 border-r-0 p-2 px-3 mr-0 rounded-md rounded-tr-none rounded-br-none">%</span>
+                                                <span className=" text-gray-800 border border-gray-300 py-2 pl-3 pr-5 ml-0 rounded-md rounded-tl-none rounded-bl-none">100</span>
+                                            </div>
+                                        </div>
+
                                     </div>
                                 </div>
                             </CardContent>
                         </Card>
-                        <h3 className="text-2xl font-medium">Simple multi-entity admin</h3>
-                        <p className="text-gray-500">Request transfer pricing documents and intragroup agreements, monitor work across teams, and learn how to structure your entities in a few clicks.</p>
+                        <h3 className="text-2xl font-medium mt-5">Simple multi-entity admin</h3>
+                        <p className="text-gray-600">Request transfer pricing documents and intragroup agreements, monitor work across teams, and learn how to structure your entities in a few clicks.</p>
                     </div>
                 </div>
             </div>
