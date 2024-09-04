@@ -10,13 +10,14 @@ import ChatMessage from "./ChatMessage"
 import { Switch } from "@/components/ui/switch"
 import { Checkbox } from "./ui/checkbox"
 import useActiveSectionView from "@/hooks/useActiveSectionView"
+import Image from "next/image"
 
 
 
 export default function Component() {
-    const { ref } = useActiveSectionView("features");
+    const { ref } = useActiveSectionView("Features");
     return (
-        <div className="bg-[#F9F7F4] py-12  px-[18rem]" id="features" ref={ref}>
+        <div className="scroll-mt-32 bg-[#F9F7F4] py-12  px-[18rem]" id="features" ref={ref}>
             {/* Heading */}
             <div className="text-center space-y-5">
                 <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Features</Badge>
@@ -63,7 +64,10 @@ export default function Component() {
                     <Card className="bg-[#F9F7F4] border-none shadow-none h-[25rem] p-0 mb-10">
                         <CardContent className="flex flex-col justify-end gap-4 h-full p-1 pb-2 ">
                             <div className="flex space-x-4">
-                                <img src="/placeholder.svg?height=24&width=24" alt="Slack" className="w-6 h-6" />
+                                {/* <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="width: 100%; height: 100%" viewBox="0 0 18 18" preserveAspectRatio="none" width="100%" height="100%"><use href="#svg1736232606_1860"></use></svg> */}
+                                {/* <Image href="http://www.w3.org/2000/svg" alt="Slack" width={6} height={6} className="p-3 bg-white" /> */}
+
+
                                 <img src="/placeholder.svg?height=24&width=24" alt="Microsoft Teams" className="w-6 h-6" />
                                 <img src="/placeholder.svg?height=24&width=24" alt="Gmail" className="w-6 h-6" />
                             </div>

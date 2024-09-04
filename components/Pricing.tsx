@@ -11,7 +11,7 @@ export default function Component() {
     const { ref } = useActiveSectionView("pricing");
 
     return (
-        <div className="bg-[#F9F7F4] py-16 w-full px-[16rem]" id="pricing" ref={ref}>
+        <div className="scroll-mt-32 bg-[#F9F7F4] py-16 w-full px-[16rem]" id="pricing" ref={ref}>
             <div className="">
                 <div className="text-center space-y-5 mb-16">
                     <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Plans</Badge>

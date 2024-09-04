@@ -4,7 +4,7 @@ import React from 'react'
 import { logos } from '@/lib/data';
 import Image from 'next/image';
 const Customers = () => {
-    const { ref } = useActiveSectionView("customers");
+    const { ref } = useActiveSectionView("Customers");
 
     return (
         <div className=' bg-white px-[18rem] py-20 w-full ' id='customers' ref={ref}>

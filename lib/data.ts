@@ -1,5 +1,9 @@
 export const navLinks = [
     {
+        label: "Home",
+        href: "#home",
+    },
+    {
         label: "Use cases",
         href: "#usecases",
     },

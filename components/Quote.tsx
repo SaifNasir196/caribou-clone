@@ -5,9 +5,8 @@ import { Avatar, AvatarImage } from './ui/avatar'
 import useActiveSectionView from '@/hooks/useActiveSectionView'
 
 const Quote = () => {
-    const { ref } = useActiveSectionView("quote");
     return (
-        <div className='px-[18rem] w-full bg-[#F9F7F4] pt-24 pb-36' id='quote' ref={ref}>
+        <div className='px-[18rem] w-full bg-[#F9F7F4] pt-24 pb-36'>
 
             <Card className='w-full border-none shadow-[0_48px_100px_0_rgba(46,44,12,0.15)] rounded-3xl py-6 px-10'>
                 <CardHeader>

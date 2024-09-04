@@ -10,7 +10,7 @@ import useActiveSectionView from "@/hooks/useActiveSectionView"
 export default function Hero() {
     const { ref } = useActiveSectionView("Home");
     return (
-        <div className=" w-full bg-[#F9F7F4] flex flex-col gap-4 lg:flex-row items-start justify-center pb-12 pt-24 px-[17rem]" id="home" ref={ref}>
+        <div className="scroll-mt-32 w-full bg-[#F9F7F4] flex flex-col gap-4 lg:flex-row items-start justify-center pb-12 pt-24 px-[17rem]" id="home" ref={ref}>
             {/* Left Column */}
             <div className=" lg:w-[52%] py-20">
                 <p className=" w-fit rounded-lg py-1 text-sm text-muted-foreground font-sans">

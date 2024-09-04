@@ -1,9 +1,9 @@
 'use client'
 import React, { useContext, useState, createContext } from 'react'
-import { links } from '@/lib/data'
+import { navLinks } from '@/lib/data'
 
 
-export type SectionName = (typeof links)[number]["name"];
+export type SectionName = (typeof navLinks)[number]["label"];
 type ActiveSectionContectProviderProps = {
   children: React.ReactNode
 }
@@ -27,7 +27,7 @@ export const useActiveSectionContext = () => {
 
 const ActiveSectionContextProvider = ({ children }: ActiveSectionContectProviderProps) => {
   const [activeSection, setActiveSection] = useState<SectionName>("Home")
-  const [lastClickTime, setLastClickTime] = useState(0)  
+  const [lastClickTime, setLastClickTime] = useState(0)
   return <ActiveSectionContext.Provider value={{
     activeSection,
     setActiveSection,
