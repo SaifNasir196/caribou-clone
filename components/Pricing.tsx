@@ -1,18 +1,20 @@
+"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Check } from "lucide-react"
 import { pricing } from "@/lib/data"
 import { CircleCheck } from "lucide-react"
-import { Separator } from "@radix-ui/react-separator"
+import useActiveSectionView from "@/hooks/useActiveSectionView"
 
 
 export default function Component() {
+    const { ref } = useActiveSectionView("pricing");
+
     return (
-        <div className="bg-[#F9F7F4] py-16 w-full px-[18rem]">
+        <div className="bg-[#F9F7F4] py-16 w-full px-[18rem]" id="pricing" ref={ref}>
             <div className="">
                 <div className="text-center space-y-5 mb-16">
-                    <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Features</Badge>
+                    <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Pricing</Badge>
                     <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium mb-7">
                         One price. No hidden fees
                     </h2>

@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
 import { ClerkProvider } from '@clerk/nextjs';
 import { ThemeProvider } from "next-themes"
+import ActiveSectionContextProvider from '@/context/ActiveSectionContextProvider';
 import { type ThemeProviderProps } from "next-themes/dist/types"
 
 export function Providers({ children, ...props }: ThemeProviderProps) {
@@ -18,7 +19,11 @@ export function Providers({ children, ...props }: ThemeProviderProps) {
   return (
     <ClerkProvider>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider {...props}>{children}</ThemeProvider>
+        <ThemeProvider {...props}>
+          <ActiveSectionContextProvider>
+            {children}
+          </ActiveSectionContextProvider>
+        </ThemeProvider>
       </QueryClientProvider>
     </ClerkProvider>
   );

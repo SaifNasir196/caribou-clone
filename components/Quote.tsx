@@ -1,10 +1,13 @@
+'use client'
 import React from 'react'
 import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card"
 import { Avatar, AvatarImage } from './ui/avatar'
+import useActiveSectionView from '@/hooks/useActiveSectionView'
 
 const Quote = () => {
+    const { ref } = useActiveSectionView("quote");
     return (
-        <div className='px-[18rem] w-full bg-[#F9F7F4] py-24'>
+        <div className='px-[18rem] w-full bg-[#F9F7F4] py-24' id='quote' ref={ref}>
 
             <Card className='w-full border-none shadow-xl rounded-3xl py-6 px-10'>
                 <CardHeader>

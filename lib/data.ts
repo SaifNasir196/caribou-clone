@@ -1,15 +1,15 @@
 export const navLinks = [
     {
         label: "Use cases",
-        href: "/",
+        href: "#usecases",
     },
     {
         label: "Features",
-        href: "#explore",
+        href: "#features",
     },
     {
         label: "Prices",
-        href: "#about",
+        href: "#pricing",
     },
     {
         label: "Partners",

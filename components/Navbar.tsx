@@ -9,14 +9,18 @@ import { cn } from "@/lib/utils"
 import { useUser, UserButton } from "@clerk/nextjs"
 import { SignOutButton } from "@clerk/nextjs"
 import { navLinks } from "@/lib/data"
+import { useActiveSectionContext } from "@/context/ActiveSectionContextProvider"
+import { motion } from "framer-motion";
 
 
 export default function Component() {
     const { isSignedIn } = useUser()
+    const { activeSection, setActiveSection, setLastClickTime } = useActiveSectionContext();
     const pathname = usePathname()
     return (
-        <header className="w-full bg-background px-4 py-4 shadow-sm md:px-8 lg:px-12">
-            <div className=" md:mx-[15rem] my-3 flex items-center justify-between">
+        <header className="w-full bg-background relative z-[999]">
+
+            <div className="bg-white fixed h-[6rem] w-full flex items-center justify-between px-[18rem]">
                 {/* logo */}
                 <Link href="#" className="flex items-center" prefetch={false}>
                     <Mountain />
@@ -24,16 +28,52 @@ export default function Component() {
                 </Link>
 
                 {/* links */}
-                <nav className="hidden space-x-5 md:flex font-semibold mr-3">
-                    <div className="space-x-1 font-sans font-semibold">
-                        {navLinks.map((link) => (
+                <nav className="hidden space-x-5 font-semibold mr-3 md:flex sm:top-[1.7rem] sm:h-[initial]">
+
+                    <ul className="space-x-1 font-sans font-medium w-full flex flex-wrap items-center justify-center">
+                        {/* {navLinks.map((link) => (
                             <Link key={link.href} href={link.href}>
                                 <Button variant="ghost" className={cn("text-[1.05rem] px-[0.4rem]", { "text-primary bg-white": pathname == link.href })}>
                                     {link.label}
                                 </Button>
                             </Link>
+                        ))} */}
+                        {navLinks.map((link) => (
+                            <li
+                                className="h-1/3 py-4 px-1 flex items-center justify-center relative"
+                                key={link.href}
+                            >
+                                <Link
+                                    className={cn(
+                                        "p-2 flex w-full items-center justify-center transition",
+                                        "hover:text-gray-950 dark:text-gray-500 dark:hover:text-gray-300",
+                                        {
+                                            "text-gray-950 dark:text-gray-200": activeSection === link.label,
+                                        }
+                                    )}
+                                    href={link.href}
+                                    onClick={() => {
+                                        setActiveSection(link.label);
+                                        setLastClickTime(Date.now());
+                                    }}
+                                >
+                                    {link.label}
+
+                                    {link.label === activeSection && (
+                                        <motion.span
+                                            className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                                            layoutId="activeSection"
+                                            transition={{
+                                                type: "spring",
+                                                stiffness: 350,
+                                                damping: 25,
+                                            }}
+                                        ></motion.span>
+                                    )}
+                                </Link>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
 
 
                     {isSignedIn ? (
@@ -42,7 +82,7 @@ export default function Component() {
                     ) : (
                         <SignInButton>
                             <Link href={'/sign-in'}>
-                                <Button variant="outline" className="font-sans text-md py-5" > Sign in <ArrowRight className="ml-1" size={16} /> </Button>
+                                <Button variant="outline" className="font-sans text-md py-5 my-5" > Sign in <ArrowRight className="ml-1" size={16} /> </Button>
                             </Link>
                         </SignInButton>
                     )}

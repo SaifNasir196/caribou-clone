@@ -6,12 +6,14 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { InfoIcon } from "lucide-react"
 import { useCases } from '@/lib/data'
+import useActiveSectionView from '@/hooks/useActiveSectionView'
 
 export default function UseCases() {
     const [activeTab, setActiveTab] = useState("fintechs")
+    const { ref } = useActiveSectionView("usecases");
 
     return (
-        <div className="bg-[#F9F7F4] flex flex-col items-center gap-28 justify-center py-10 px-[17rem]">
+        <div className="bg-[#F9F7F4] flex flex-col items-center gap-28 justify-center py-10 px-[17rem]" id='usecases' ref={ref}>
             <div className="w-full space-y-16">
                 <div className="text-center space-y-8">
                     <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Use cases</Badge>

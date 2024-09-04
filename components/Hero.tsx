@@ -1,17 +1,21 @@
+"use client"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Check, FileText } from "lucide-react"
-import Image from "next/image"
+import { FileText } from "lucide-react"
 import ChatMessage from "@/components/ChatMessage"
 import { Badge } from "./ui/badge"
+import useActiveSectionView from "@/hooks/useActiveSectionView"
 
 export default function Hero() {
+    const { ref } = useActiveSectionView("Home");
     return (
-        <div className=" w-full bg-[#F9F7F4] flex flex-col lg:flex-row items-start justify-center py-4 px-[17rem]">
+        <div className=" w-full bg-[#F9F7F4] flex flex-col gap-12 lg:flex-row items-start justify-center py-4 px-[17rem]" id="home" ref={ref}>
             {/* Left Column */}
-            <div className=" lg:w-[52%]  py-20">
-                <span className="border border-orange-500 text-muted-foreground">Backed by Y Combinator</span>
+            <div className=" lg:w-[52%] py-20">
+                <p className="border border-orange-500 w-fit rounded-lg px-3 py-1 text-muted-foreground font-sans">
+                    Backed by <span className="bg-orange-500 px-2 py-1 my-3 mx-1 text-white rounded-sm">Y</span> Combinator
+                </p>
 
                 <h1 className="text-3xl md:text-4xl lg:text-[3.05rem] font-bold md:leading-relaxed lg:leading-snug mt-12 mb-5">
                     Intragroup agreements, covered from day one

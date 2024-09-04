@@ -1,20 +1,22 @@
+'use client'
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { FileText, Users } from "lucide-react"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
+import { FileText } from "lucide-react"
 import CompanyStructureDiagram from "./Diagram"
 import OrganizationChart from "./OrganizationChart"
 import { employees, arrowPaths } from "@/lib/data"
 import ChatMessage from "./ChatMessage"
 import { Switch } from "@/components/ui/switch"
 import { Checkbox } from "./ui/checkbox"
+import useActiveSectionView from "@/hooks/useActiveSectionView"
 
 
 
 export default function Component() {
+    const { ref } = useActiveSectionView("features");
     return (
-        <div className="bg-[#F9F7F4] py-16  px-[18rem]">
+        <div className="bg-[#F9F7F4] py-16  px-[18rem]" id="features" ref={ref}>
             <div className="max-w-7xl">
                 <div className="text-center space-y-5 mb-16">
                     <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Features</Badge>
