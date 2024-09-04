@@ -8,7 +8,7 @@ import useActiveSectionView from "@/hooks/useActiveSectionView"
 
 
 export default function Component() {
-    const { ref } = useActiveSectionView("pricing");
+    const { ref } = useActiveSectionView("Prices");
 
     return (
         <div className="scroll-mt-32 bg-[#F9F7F4] py-16 w-full px-[16rem]" id="pricing" ref={ref}>

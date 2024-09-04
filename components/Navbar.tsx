@@ -38,7 +38,7 @@ export default function Component() {
                                 </Button>
                             </Link>
                         ))} */}
-                        {navLinks.map((link) => (
+                        {navLinks.slice(1).map((link) => (
                             <li
                                 className="h-1/3 py-4 px-1 flex items-center justify-center relative"
                                 key={link.href}
@@ -61,7 +61,7 @@ export default function Component() {
 
                                     {link.label === activeSection && (
                                         <motion.span
-                                            className="bg-gray-200 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
+                                            className="bg-[#ddd3c5]/40 rounded-full absolute inset-0 -z-10 dark:bg-gray-800"
                                             layoutId="activeSection"
                                             transition={{
                                                 type: "spring",

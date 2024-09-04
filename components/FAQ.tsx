@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import {
     Accordion,
@@ -6,12 +7,14 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { FAQData } from '@/lib/data'
+import useActiveSectionView from '@/hooks/useActiveSectionView';
 
 
 
 const FAQ = () => {
+    const { ref } = useActiveSectionView("Blog");
     return (
-        <div className="bg-[#F9F7F4] py-[7.75rem] w-full px-[18rem]">
+        <div className="bg-[#F9F7F4] py-[7.75rem] w-full px-[18rem]" id='blog' ref={ref}>
 
             <div className="text-center space-y-2 mb-16">
                 <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium">
