@@ -18,9 +18,9 @@ export default function Component() {
     const { activeSection, setActiveSection, setLastClickTime } = useActiveSectionContext();
     const pathname = usePathname()
     return (
-        <header className="w-full bg-background relative z-[999]">
+        <header className="w-full  relative z-[999]">
 
-            <div className="bg-white fixed h-[6rem] w-full flex items-center justify-between px-[18rem]">
+            <div className="bg-background fixed h-[6rem] w-full flex items-center justify-between px-[18rem]">
                 {/* logo */}
                 <Link href="#" className="flex items-center" prefetch={false}>
                     <Mountain />

@@ -11,18 +11,18 @@ export default function Component() {
     const { ref } = useActiveSectionView("pricing");
 
     return (
-        <div className="bg-[#F9F7F4] py-16 w-full px-[18rem]" id="pricing" ref={ref}>
+        <div className="bg-[#F9F7F4] py-16 w-full px-[16rem]" id="pricing" ref={ref}>
             <div className="">
                 <div className="text-center space-y-5 mb-16">
-                    <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Pricing</Badge>
+                    <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Plans</Badge>
                     <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium mb-7">
                         One price. No hidden fees
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 font-sans">
+                <div className="flex gap-8 font-sans justify-center">
                     {pricing.map((plan, index: number) => (
-                        <Card key={index} className={`${plan.popular ? 'border-purple-200 ' : 'bg-white'} rounded-2xl border-4 p-3`}>
+                        <Card key={index} className={`${plan.popular ? 'border-purple-200 ' : 'bg-white'} rounded-2xl border-4 p-4`}>
                             <CardHeader>
                                 <div className="flex flex-col">
                                     <div className="flex justify-between items-center mb-1">

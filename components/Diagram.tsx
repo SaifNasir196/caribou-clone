@@ -91,7 +91,7 @@ interface CompanyNodeProps {
 }
 
 const CompanyNode = ({ name, country, flag, isNew = false, isDashed = false }: CompanyNodeProps) => (
-    <Card className={`w-80 p-4  ${isDashed ? 'border-2 border-dashed border-gray-200' : 'shadow-md'} `}>
+    <Card className={`w-80 p-4 border-none  ${isDashed ? 'border-2 border-dashed border-gray-200' : 'shadow-sm'} `}>
         <div className="flex justify-between items-start mb-3">
             <h3 className="text-base font-semibold text-gray-900">{name}</h3>
             {isNew && (
@@ -125,7 +125,7 @@ const CompanyStructureDiagram = () => {
 
                     {/* Subsidiaries */}
                     <div className="flex justify-between pt-6 gap-12">
-                        <CompanyNode name="Acme Industries" country="Spain" flag="🇪🇸" isNew={true} />
+                        <CompanyNode name="Acme Industries" country="Spain" flag="🇪🇸" isNew={true} isDashed />
                         <CompanyNode name="Acme US Limited" country="United States" flag="🇺🇸" />
                     </div>
                 </div>

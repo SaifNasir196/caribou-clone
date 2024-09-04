@@ -6,8 +6,8 @@ import { ArrowRight } from 'lucide-react'
 
 const Contact = () => {
     return (
-        <div className="bg-[#F9F7F4] py-16 w-full px-[18rem]">
-            <Card className='border-none shadow-lg py-4 w-full rounded-2xl'>
+        <div className="bg-[#F9F7F4] pt-16 pb-36 w-full px-[18rem]">
+            <Card className='border-none shadow-[0_48px_100px_0_rgba(46,44,12,0.15)] py-4 w-full rounded-2xl bg-[#fbfaf9]'>
                 <CardContent className='flex flex-col justify-center items-center font-sans border-none '>
                     <CardTitle className="text-xl 3xl:text-4xl font-medium mb-2 mt-4 tracking-wider">
                         Interested in speaking with us?

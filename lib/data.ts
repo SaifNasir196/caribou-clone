@@ -25,7 +25,15 @@ export const navLinks = [
     }
 ] as const
 
-
+export const logos = [
+    { name: "Airbnb", icon: "/logos/airbnb.svg" },
+    { name: "Amazon", icon: "/logos/amazon.svg" },
+    { name: "Apple", icon: "/logos/apple.svg" },
+    { name: "Google", icon: "/logos/google.svg" },
+    { name: "Microsoft", icon: "/logos/microsoft.svg" },
+    { name: "Netflix", icon: "/logos/netflix.svg" },
+    { name: "Spotify", icon: "/logos/spotify.svg" },
+] as const;
 export const useCases = [
     {
         id: "cash-transfers",

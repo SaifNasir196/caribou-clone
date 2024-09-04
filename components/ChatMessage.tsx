@@ -17,7 +17,7 @@ interface ChatMessageProps {
 
 export default function ChatMessage({ sender, recipient, message, isReply = false, textsm = false }: ChatMessageProps) {
   return (
-    <div className={`flex items-start mb-4 ${isReply && 'ml-16'}  bg-white rounded-2xl border shadow-md relative font-sans`}>
+    <div className={`flex items-start mb-4 ${isReply && 'ml-16'}  bg-white rounded-xl shadow-[0_10px_36px_0_rgba(0,0,0,0.16),0_0_0_1px_rgba(0,0,0,0.06)] relative font-sans`}>
       <Badge className={`text-base font-normal bg-white rounded-full p-1 h-8 absolute -top-4 ${textsm && 'text-sm'} ${isReply ? 'right-4' : 'left-4'}`}>
         <Avatar className="h-6 w-6">
           <AvatarImage src={sender.avatarUrl} />

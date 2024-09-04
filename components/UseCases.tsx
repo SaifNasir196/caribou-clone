@@ -13,9 +13,9 @@ export default function UseCases() {
     const { ref } = useActiveSectionView("usecases");
 
     return (
-        <div className="bg-[#F9F7F4] flex flex-col items-center gap-28 justify-center py-10 px-[17rem]" id='usecases' ref={ref}>
+        <div className="bg-[#F9F7F4] flex flex-col items-center gap-28 justify-center py-24 px-[17rem]" id='usecases' ref={ref}>
             <div className="w-full space-y-16">
-                <div className="text-center space-y-8">
+                <div className="text-center space-y-6">
                     <Badge variant="outline" className='text-sm font-sans font-normal text-muted-foreground rounded-full ' >Use cases</Badge>
                     <h2 className="text-3xl md:text-4xl lg:text-4xl font-medium">
                         Treat every jurisdiction like a local one.
@@ -41,7 +41,7 @@ export default function UseCases() {
                         ))}
                     </div>
 
-                    <div className="space-y-4 h-full  rounded-xl bg-[#fffddd] p-10">
+                    <div className="space-y-4 h-full  rounded-xl shadow-[0_48px_100px_0_rgba(46,44,12,0.15)] bg-[#f7f4f2] border border-white shadow-gray-300/50 drop-shadow-xl p-10">
 
                         {useCases.find(uc => uc.id === activeTab)?.diagram.map((entity, index, arr) => (
                             <div key={entity.name} >
